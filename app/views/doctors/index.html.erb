@@ -1,0 +1,11 @@
+<h1>All Doctors</h1>
+<hr/>
+<ul>
+	<%=@doctors.each do |d|%>
+		<li>	
+			<%="Dr. #{d.full_name}"%>
+			<%= link_to 'Appointments', doctor_appointments_path(d), class: "ui button blue"%>
+		</li>
+		<br/>
+	<%end%>
+</ul>

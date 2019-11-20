@@ -1,0 +1,15 @@
+<h1><%= @doctor == nil ? "Your Appointments" : "Dr. #{Doctor.find(@doctor).full_name}'s Appointments"%></h1>
+<hr/>
+<h2><%= current_user.full_name %></h2>
+<ul>
+	<%= @appointments.each do |app|%>
+		<%doctor = Doctor.find(app.doctor_id)%>
+		<li>
+			<h2><%= app.date%> </h2>
+			<%= link_to 'Cancel', app, method: :delete , class: "ui button red inverted"%>
+			<br/>
+			<h2><%= @doctor == nil ? "Dr. " + doctor.full_name : current_user.full_name %></h2>
+		</li>
+		<hr/>
+	<%end%>
+</ul>

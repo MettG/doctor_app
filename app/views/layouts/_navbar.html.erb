@@ -1,0 +1,13 @@
+<nav class="container">
+	<div class="menu">
+		<a class="item">
+			<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "ui button basic red"%>
+		</a>
+		<a class="item">
+			<%= link_to 'Your Appointments', users_appointments_path, class: "ui button basic" %>
+		</a>
+		<a class="item">
+			<%= link_to 'All Doctors', doctors_path, class: "ui button basic"%>
+		</a>
+	</div>
+</nav>
